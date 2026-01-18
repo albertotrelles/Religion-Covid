@@ -1,0 +1,193 @@
+\documentclass{article}
+
+\title{Resultados}
+\date{\today}
+
+    \usepackage{graphicx} % For scalebox
+    \usepackage{ragged2e} % For justifying
+    \usepackage{array}    % For advanced table formatting
+    \usepackage{geometry} % Set margins
+    \usepackage{amssymb}  % For cross and checks 
+    \usepackage{pdflscape}
+    \usepackage{xcolor}   % For red text
+    \usepackage{booktabs} % For cmidrule
+    \usepackage{multirow}
+    \usepackage{multicol}
+
+\begin{document}
+\newgeometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\section{Results}
+
+%-----------------------------------------%
+%--- Table: TWFE without Never-Treated ---%
+%-----------------------------------------%
+\begin{table}[htb!]
+\caption{TWFE without Never-Treated}
+\begin{center}
+\scalebox{0.9}{
+\def\arraystretch{1.1}
+\begin{tabular}{
+>{\raggedright\arraybackslash}p{6cm}
+*{6}{>{\centering\arraybackslash}p{1.5cm}}
+}
+~ & Faith & God & Meditation & Prayer & Religion & Spirituality \\
+\hline \hline
+\\ [-1ex]
+\textit{A. TWFE}  \\ [1ex]
+    \input{../Tables/us_twfe.tex} \\ [-1ex]
+\\
+\textit{B. Het TWFE}  \\ [1ex]
+    \input{../Tables/us_htwfe.tex} \\ [-1ex]
+\hline 
+\hline 
+\end{tabular}
+}
+\end{center}
+\justifying
+{\scriptsize \textbf{Notes:} This table reports t-tests for mean differences between attendees and non-attendees treatment and control groups. *signifcantant 10\%, **signicantat 5\%,***signicantant 1\%  \par}
+\end{table}
+
+%-----------------------------------------%
+%--- Table: TWFE with Never-Treated    ---%
+%-----------------------------------------%
+\begin{table}[htb!]
+\caption{TWFE with Never-Treated}
+\begin{center}
+\scalebox{0.9}{
+\def\arraystretch{1.1}
+\begin{tabular}{
+>{\raggedright\arraybackslash}p{6cm}
+*{6}{>{\centering\arraybackslash}p{1.5cm}}
+}
+~ & Faith & God & Meditation & Prayer & Religion & Spirituality \\
+\hline \hline
+\\ [-1ex]
+\textit{A. TWFE}  \\ [1ex]
+    \input{../Tables/us_twfe_nt.tex} \\ [-1ex]
+\\
+\textit{B. Het TWFE}  \\ [1ex]
+    \input{../Tables/us_htwfe_nt.tex} \\ [-1ex]
+\hline 
+\hline 
+\end{tabular}
+}
+\end{center}
+\justifying
+{\scriptsize \textbf{Notes:} This table reports t-tests for mean differences between attendees and non-attendees treatment and control groups. *signifcantant 10\%, **signicantat 5\%,***signicantant 1\%  \par}
+\end{table}
+
+\newpage
+
+\underline{Model}
+
+$$y_{ic} = \alpha_c + \lambda_i +\gamma (year \times T_{ic}) + \beta x_{i-1,c} $$
+$$y_{ic} = \alpha_c + \lambda_i +\gamma (year \times T_{ic}) + \delta T_{ic} + \beta x_{i-1,c} $$
+
+\begin{itemize}
+    \item $T$: dummy $=1$ since lockdown in 2020. Also $=1$ for 2019 paired observations. 
+    \item $year$: 2020 dummy.
+    \item $x$: daily covid-19 controls at the state level (deaths, averaged deaths, cases, averaged cases). 
+    \item $\alpha_c$: country/state fixed effects. 
+    \item $\lambda_i$: time fixed effects - year (2019, 2020), week of year (1-15), day of week (Monday-Sunday). 
+    \item SE clustered at the day of year level (100 clusters, 2 observations per cluster).
+\end{itemize}
+
+Obs. $year \times T$ is equivalent to the post-treatment variable in the standard TWFE setup.
+
+
+\newpage
+
+%-----------------------------------------%
+%--- Figure: RSI series US             ---%
+%-----------------------------------------%
+\begin{figure}[htb!]
+\caption{Unified RSI series by year - US}
+\centering
+\begin{tabular}{cc}
+\\ 
+
+% Row 1
+Faith & God \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_faith_series.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_god_series.png} \\
+
+
+% Row 2
+Meditation & Prayer \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_meditation_series.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_prayer_series.png} \\
+
+
+% Row 3
+Religion & Spirituality \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_religion_series.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_spirituality_series.png} \\
+
+\end{tabular}
+\end{figure}
+%The ciclicality of the series showcase the importance of including 2019 paired observations.
+
+\newpage
+
+%-----------------------------------------%
+%--- Figure: RSI series US             ---%
+%-----------------------------------------%
+\begin{figure}[htb!]
+\caption{Unified RSI series by year - US}
+\centering
+\begin{tabular}{cc}
+\\ 
+
+% Row 1
+Faith & God \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_faith_series_nt.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_god_series_nt.png} \\
+
+
+% Row 2
+Meditation & Prayer \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_meditation_series_nt.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_prayer_series_nt.png} \\
+
+
+% Row 3
+Religion & Spirituality \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_religion_series_nt.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_spirituality_series_nt.png} \\
+
+\end{tabular}
+\end{figure}
+
+\newpage
+
+%-----------------------------------------%
+%--- Figure: RSI series US             ---%
+%-----------------------------------------%
+\begin{figure}[htb!]
+\caption{Unified RSI series by year - US}
+\centering
+\begin{tabular}{cc}
+\\ 
+
+% Row 1
+Faith & God \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_faith_series_nyt.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_god_series_nyt.png} \\
+
+
+% Row 2
+Meditation & Prayer \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_meditation_series_nyt.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_prayer_series_nyt.png} \\
+
+
+% Row 3
+Religion & Spirituality \\
+\includegraphics[scale=0.09]{../Figures/descriptive/us_religion_series_nyt.png} &
+\includegraphics[scale=0.09]{../Figures/descriptive/us_spirituality_series_nyt.png} \\
+
+\end{tabular}
+\end{figure}
+
+\end{document}

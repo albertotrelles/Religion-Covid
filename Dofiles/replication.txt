@@ -1,0 +1,407 @@
+********************************************************************
+***COVID-19, Lockdowns and Well-Being: Evidenc from Google Trends***
+********************************************************************
+
+* This do-file performs the empirical analysis for Europe
+
+*Change the path below:
+
+global data "/Users/Data/Europe"
+global results "/Users/Results"
+
+
+	**********************************************************
+	*****			MAIN ANALYSIS						******
+	**********************************************************
+
+	
+	/* Figure 1: Google Trends in Boredom, Loneliness and Sadness Before and After the Stay-at-Home Orders*/
+	
+	local varlist "Boredom Loneliness Sadness"
+	foreach var of local varlist {
+
+		use "$data/Google-trends-`var'-Europe/daily_`var'_18_20_all_full.dta", clear
+		drop if dayssincelockdown==0 
+		drop if dayssincelockdown<-60
+		keep if dayssincelockdown!=.
+		
+		bysort year dayssincelockdown: egen m_`var'_18_20=wtmean(d_`var'_18_20), weight(pop)
+
+		twoway (connected m_`var'_18_20 dayssincelockdown if year==2019, msize(vsmall) lcolor(gs10) mcolor(gs10)) ///
+		(connected m_`var'_18_20 dayssincelockdown if year==2020, msize(vsmall) /*lcolor(black) mcolor(black)*/), ///
+		xline(0, lpattern(solid) lcolor(cranberry)) legend(order(1 "2019" 2 "2020")) /*ylabel(0(50)100)*/ ///
+		ytitle("`var'") xlabel(-56 -49 -42 -35 -28 -21 -14 -7 0 7 14 21 28) xscale(range(-60 30)) ///
+		saving("$results/`var'/`var'_DID.gph", replace) 
+		
+		}
+
+		
+	/* Figure 2: The Effects of the Stay-At-Home Orders on Well-Being*/
+	
+	local varlist "Boredom Contentment Impairment Irritability Loneliness Panic Sadness Sleep Stress Suicide Wellbeing Worry Divorce"
+	
+	foreach var of local varlist {
+	
+		use "$data/Google-trends-`var'-Europe/daily_`var'_18_20_all_full.dta", clear
+		drop if dayssincelockdown==0
+		keep if dayssincelockdown!=.
+
+		replace year=year-2019
+		gen post_lockdown_year=post_lockdown*year
+		label var post_lockdown_year "Period after lockdown *Year"
+		
+		sort country year day
+		gen L_dailyconfirmeddeathsdeaths=dailyconfirmeddeathsdeaths[_n-1] if country==country[_n-1]
+		
+		reghdfe d_`var'_18_20 post_lockdown_year post_lockdown L_dailyconfirmeddeathsdeaths [pw=pop] , ///
+		absorb(country year week day_w) vce(cluster day)
+		eststo DID_`var'
+		estadd local countryFE "Yes", replace
+		estadd local timeFE "Yes", replace
+		estadd local death "Yes", replace
+		}
+	
+		coefplot (DID_Boredom, keep(post_lockdown_year) color(cranberry) asequation(Boredom) ciopts(lcolor(cranberry) recast(rcap)))  ///
+		(DID_Loneliness, keep(post_lockdown_year) color(cranberry) asequation(Loneliness) ciopts(lcolor(cranberry) recast(rcap))) ///
+		(DID_Impairment, keep(post_lockdown_year)  color(cranberry) asequation(Impairment) ciopts(lcolor(cranberry) recast(rcap))) ///
+		(DID_Irritability, keep(post_lockdown_year) color(olive) asequation(Irritability) ciopts(lcolor(olive) recast(rcap))) ///
+		(DID_Panic, keep(post_lockdown_year) color(olive) asequation(Panic) ciopts(lcolor(olive) recast(rcap))) ///
+		(DID_Sleep, keep(post_lockdown_year) color(olive) asequation(Sleep) ciopts(lcolor(olive) recast(rcap))) ///
+		(DID_Stress, keep(post_lockdown_year) color(olive) asequation(Stress) ciopts(lcolor(olive) recast(rcap))) ///
+		(DID_Worry, keep(post_lockdown_year) color(olive) asequation(Worry) ciopts(lcolor(olive) recast(rcap))) ///
+		(DID_Contentment, keep(post_lockdown_year) color(emerald) asequation(Contentment) ciopts(lcolor(emerald) recast(rcap))) ///
+		(DID_Sadness, keep(post_lockdown_year) color(emerald) asequation(Sadness) ciopts(lcolor(emerald) recast(rcap))) ///
+		(DID_Suicide, keep(post_lockdown_year) color(emerald) asequation(Suicide) ciopts(lcolor(emerald) recast(rcap))) ///
+		(DID_Wellbeing, keep(post_lockdown_year)  color(emerald) asequation(Wellbeing) ciopts(lcolor(emerald) recast(rcap))) ///
+		(DID_Divorce, keep(post_lockdown_year)  color(gs10) asequation(Divorce) ciopts(lcolor(gs10) recast(rcap))) ///
+		,label asequation swapnames xline(0, lcolor(black)) recast(bar) ci(90) legend(off) xtitle("DID Estimates")  ///
+		headings(Boredom= "{bf:Social dysfunction}" Irritability= "{bf:Anxiety}" Contentment= "{bf:Happiness}" Divorce= "{bf:}")
+		graph export "$results/All_figures_and_tables/DID_Estimates.png", replace
+	
+	
+	/* Figure 3: Duration of the Effects of the Stay-at-Home Orders on Boredom, Loneliness and Sadness*/
+	
+	local varlist "Boredom Contentment Impairment Irritability Loneliness Panic Sadness Sleep Stress Suicide Wellbeing Worry Divorce"
+	foreach var of local varlist {
+			
+		use "$data/Google-trends-`var'-Europe/daily_`var'_18_20_all_full.dta", clear
+		keep if dayssincelockdown!=.
+
+		replace year=year-2019
+		gen post_lockdown_year=post_lockdown*year
+		label var post_lockdown_year "Period after lockdown *Year"
+		
+		gen lockdown_week=week if date==date_lockdown_ann
+		bysort country: egen m_lockdown_week=mean(lockdown_week)
+		replace lockdown_week=m_lockdown_week
+		drop m_lockdown_week
+		bysort country: gen weeksincelockdown=week-lockdown_week
+		drop lockdown_week
+		
+		xi gen i.weeksincelockdown*year, noomit
+		
+		drop if weeksincelockdown<-4
+		
+		replace _IweeXyear_9=0
+		
+		sort country year day
+		gen L_dailyconfirmeddeathsdeaths=dailyconfirmeddeathsdeaths[_n-1] if country==country[_n-1]
+		
+		reghdfe d_`var'_18_20 _IweeXyear_9-_IweeXyear_17  _Iweeksince*  ///
+		L_dailyconfirmeddeathsdeaths [pw=pop] , ///
+		absorb(country year week day_w) vce(cluster day)
+		eststo DID_event`var'
+		estadd local countryFE "Yes", replace
+		estadd local timeFE "Yes", replace
+		estadd local death "Yes", replace
+		
+		coefplot DID_event`var', keep(_IweeXyear_*) recast(connected) color(cranberry) ciopts(lcolor(cranberry) ) vertical  ///
+		label yline(0, lcolor(black))  ci(95) legend(off) xtitle("Weeks elapsed since the stay-at-home order") ///
+		xline(5, lpattern(dash) lcolor(black)) ///
+		rename(_IweeXyear_9= "-4" _IweeXyear_10= "-3" _IweeXyear_11="-2" _IweeXyear_12="-1" _IweeXyear_13="0" ///
+		_IweeXyear_14="1" _IweeXyear_15="2" _IweeXyear_16="3" _IweeXyear_17="4") omitted ytitle("`var'") ///
+		saving("$results/`var'/`var'_DID_Event.gph", replace)
+		
+		}
+		
+	/* Table 2 : The Effects of the Stay-at-home Orders - DiD Estimates (Fig 2.) */
+	
+		esttab DID_Boredom DID_Contentment DID_Divorce DID_Impairment  ///
+		using "$results/All_figures_and_tables/Table1_PanelB(1).tex", replace label keep(post_lockdown_year) ///
+		b(2) se(2) r(3) booktabs sfmt(%12.0f) noconstant  nogaps ///
+		coeflabel(post_lockdown_year "T_{i,c}*Year_i") ///
+		mtitles("Boredom" "Contentment" "Divorce" "Impairment") ///
+		stats(countryFE timeFE death N, fmt(. . . 0) ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations")) ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
+		
+		esttab DID_Irritability DID_Loneliness DID_Panic DID_Sadness   ///
+		using "$results/All_figures_and_tables/Table1_PanelB(2).tex", replace label keep(post_lockdown_year) ///
+		b(2) se(2) r(3) booktabs ///
+		coeflabel(post_lockdown_year "T_{i,c}*Year_i") ///
+		mtitles("Irritability" "Loneliness" "Panic" "Sadness") ///
+		stats(countryFE timeFE death N, fmt(. . . 0) ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations"))   ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
+		
+		esttab DID_Sleep DID_Stress DID_Suicide DID_Wellbeing DID_Worry  ///
+		using "$results/All_figures_and_tables/Table1_PanelB(3).tex", replace label keep(post_lockdown_year) ///
+		b(2) se(2) r(3) booktabs ///
+		coeflabel(post_lockdown_year "T_{i,c}*Year_i") ///
+		mtitles("Sleep" "Stress" "Suicide" "Wellbeing" "Worry") ///
+		stats(countryFE timeFE death N, fmt(. . . 0) ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations"))   ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
+	
+
+	
+	**********************************************************
+	*****			ONLINE APPENDIX						******
+	**********************************************************
+				
+	** Supplementary Figures
+	
+	/* Figure A1 : Announcement Dates of the Stay-at-home Orders - As of April 10th */
+	
+	use "$data/idfile.dta", clear
+		rename na_id* _ID
+		sort country_name
+		merge m:m country_name  using "$data/Lockdown_europe.dta"
+		encode date_lockdown_ann, gen(date_num)
+		replace date_num=. if date_partial_lockdown!=""
+		
+		spmap date_num using "$data/coord_europe.dta", id(_ID) fcolor(Spectral) ///
+		clnumber(10) clmethod(unique) legorder(lohi) legstyle(2) leg(pos(2)) ndlabel(No full lockdown) 
+		graph export "$results/All_figures_and_tables/Map_Europe.png", replace
+	
+	/* Figure A2: Google Trends Before and After the Stay-at-home Orders (RDD 2020) */
+	
+	local varlist "Boredom Contentment Impairment Irritability Loneliness Panic Sadness Sleep Stress Suicide Wellbeing Worry Divorce"
+	foreach var of local varlist {
+	
+		use "$data/Google-trends-`var'-Europe/daily_`var'_18_20_all_full.dta", clear
+		keep if year==2020
+		drop if dayssincelockdown==0
+		drop if dayssincelockdown<-60
+
+		bysort dayssincelockdown: egen m_`var'_18_20=wtmean(d_`var'_18_20), weight(pop)
+
+		forvalues i=2/3 {
+		gen dayssincelockdown`i'=dayssincelockdown^`i'
+		}
+		
+		reg m_`var'_18_20 dayssincelockdown* if post_lockdown==0 [pw=pop], vce(cluster day)
+		predict m_`var'_18_20_before if e(sample)
+		reg m_`var'_18_20 dayssincelockdown* if post_lockdown==1 [pw=pop], vce(cluster day)
+		predict m_`var'_18_20_after if e(sample)
+
+		twoway (scatter m_`var'_18_20 dayssincelockdown, msize(vsmall) mcolor(black)) ///
+		(line m_`var'_18_20_before dayssincelockdown, lpattern(dash) lcolor(black)) ///
+		(line m_`var'_18_20_after dayssincelockdown, lpattern(dash) lcolor(black)), ///
+		xline(0, lpattern(solid) lcolor(cranberry)) legend(off) ytitle("`var'") ///
+		xlabel(-60(30)30) xscale(range(-60 30)) saving("$results/`var'/`var'_RDD_20.gph", replace) 
+
+		}
+	
+		graph combine "$results/Boredom/Boredom_RDD_20.gph" "$results/Contentment/Contentment_RDD_20.gph" ///
+		"$results/Divorce/Divorce_RDD_20.gph" "$results/Impairment/Impairment_RDD_20.gph" ///
+		"$results/Irritability/Irritability_RDD_20.gph" "$results/Loneliness/Loneliness_RDD_20.gph", ///
+		rows(3) cols(2) imargin(0 0 0 0 0 0) iscale(.6) 
+		graph export "$results/All_figures_and_tables/RDD_Graphs_2020_A4.png", replace
+	
+		
+		graph combine "$results/Panic/Panic_RDD_20.gph" "$results/Sadness/Sadness_RDD_20.gph" ///
+		"$results/Sleep/Sleep_RDD_20.gph" "$results/Stress/Stress_RDD_20.gph" ///
+		"$results/Suicide/Suicide_RDD_20.gph" "$results/Wellbeing/Wellbeing_RDD_20.gph" ///
+		"$results/Worry/Worry_RDD_20.gph" , ///
+		rows(4) cols(2) imargin(0 0 0 0 0 0 0) iscale(.6) 
+		graph export "$results/All_figures_and_tables/RDD_Graphs_2020_A4cont.png", replace
+		
+	
+	/* Figure A3: Google Trends Before and After the Stay-at-home Orders (RDD 2019) */
+	
+	local varlist "Boredom Contentment Impairment Irritability Loneliness Panic Sadness Sleep Stress Suicide Wellbeing Worry Divorce"
+	foreach var of local varlist {
+	
+		use "$data/Google-trends-`var'-Europe/daily_`var'_18_20_all_full.dta", clear
+		keep if year==2019
+		drop if dayssincelockdown==0
+		drop if dayssincelockdown<-60
+
+		bysort dayssincelockdown: egen m_`var'_18_20=wtmean(d_`var'_18_20), weight(pop)
+
+		forvalues i=2/3 {
+		gen dayssincelockdown`i'=dayssincelockdown^`i'
+		}
+		
+		reg m_`var'_18_20 dayssincelockdown* if post_lockdown==0 [pw=pop], vce(cluster day)
+		predict m_`var'_18_20_before if e(sample)
+		reg m_`var'_18_20 dayssincelockdown* if post_lockdown==1 [pw=pop], vce(cluster day)
+		predict m_`var'_18_20_after if e(sample)
+
+		twoway (scatter m_`var'_18_20 dayssincelockdown, msize(vsmall) mcolor(gs10)) ///
+		(line m_`var'_18_20_before dayssincelockdown, lpattern(dash) lcolor(gs10)) ///
+		(line m_`var'_18_20_after dayssincelockdown, lpattern(dash) lcolor(gs10)), ///
+		xline(0, lpattern(solid) lcolor(cranberry)) legend(off) ytitle("`var'") ///
+		xlabel(-60(30)30) xscale(range(-60 30)) saving("$results/`var'/`var'_RDD_19.gph", replace) 
+
+		}
+	
+		graph combine "$results/Boredom/Boredom_RDD_19.gph" "$results/Contentment/Contentment_RDD_19.gph" ///
+		"$results/Divorce/Divorce_RDD_19.gph" "$results/Impairment/Impairment_RDD_19.gph" ///
+		"$results/Irritability/Irritability_RDD_19.gph" "$results/Loneliness/Loneliness_RDD_19.gph", ///
+		rows(3) cols(2) imargin(0 0 0 0 0 0) iscale(.6) 
+		graph export "$results/All_figures_and_tables/RDD_Graphs_2019_A5.png", replace
+	
+		
+		graph combine "$results/Panic/Panic_RDD_19.gph" "$results/Sadness/Sadness_RDD_19.gph" ///
+		"$results/Sleep/Sleep_RDD_19.gph" "$results/Stress/Stress_RDD_19.gph" ///
+		"$results/Suicide/Suicide_RDD_19.gph" "$results/Wellbeing/Wellbeing_RDD_19.gph" ///
+		"$results/Worry/Worry_RDD_19.gph" , ///
+		rows(4) cols(2) imargin(0 0 0 0 0 0 0) iscale(.6) 
+		graph export "$results/All_figures_and_tables/RDD_Graphs_2019_A5cont.png", replace
+	
+	
+	/* Figure A4: Google Trends Before and After the Stay-at-Home Orders: All Topics*/
+	
+	local varlist "Boredom Contentment Impairment Irritability Loneliness Panic Sadness Sleep Stress Suicide Wellbeing Worry Divorce"
+	foreach var of local varlist {
+
+		use "$data/Google-trends-`var'-Europe/daily_`var'_18_20_all_full.dta", clear
+		drop if dayssincelockdown==0 
+		drop if dayssincelockdown<-60
+		keep if dayssincelockdown!=.
+		
+		bysort year dayssincelockdown: egen m_`var'_18_20=wtmean(d_`var'_18_20), weight(pop)
+
+		twoway (connected m_`var'_18_20 dayssincelockdown if year==2019, msize(vsmall) lcolor(gs10) mcolor(gs10)) ///
+		(connected m_`var'_18_20 dayssincelockdown if year==2020, msize(vsmall) /*lcolor(black) mcolor(black)*/), ///
+		xline(0, lpattern(solid) lcolor(cranberry)) legend(order(1 "2019" 2 "2020")) /*ylabel(0(50)100)*/ ///
+		ytitle("`var'") xlabel(-60(30)30) xscale(range(-60 30)) saving("$results/`var'/`var'_DID_A.gph", replace) ///
+	
+		}
+	
+		grc1leg "$results/Boredom/Boredom_DID_A.gph" "$results/Contentment/Contentment_DID_A.gph" ///
+		"$results/Divorce/Divorce_DID_A.gph" "$results/Impairment/Impairment_DID_A.gph" ///
+		"$results/Irritability/Irritability_DID_A.gph" "$results/Loneliness/Loneliness_DID_A.gph", ///
+		rows(3) cols(2) imargin(0 0 0 0 0 0) iscale(.6) 
+		graph export "$results/All_figures_and_tables/DID_Graphs_A1.png", replace
+		
+		grc1leg "$results/Panic/Panic_DID_A.gph" "$results/Sadness/Sadness_DID_A.gph" ///
+		"$results/Sleep/Sleep_DID_A.gph" "$results/Stress/Stress_DID_A.gph" ///
+		"$results/Suicide/Suicide_DID_A.gph" "$results/Wellbeing/Wellbeing_DID_A.gph" ///
+		"$results/Worry/Worry_DID_A.gph", ///
+		rows(4) cols(2) imargin(0 0 0 0 0 0 0) iscale(.6) 
+		graph export "$results/All_figures_and_tables/DID_Graphs_A1cont.png", replace
+		
+		
+	/* Figure A6: Duration of the Effects of the Stay-At-Home Orders: All Topics*/	
+		
+		graph combine "$results/Boredom/Boredom_DID_Event.gph" "$results/Contentment/Contentment_DID_Event.gph" ///
+		"$results/Divorce/Divorce_DID_Event.gph" "$results/Impairment/Impairment_DID_Event.gph" ///
+		"$results/Irritability/Irritability_DID_Event.gph" "$results/Loneliness/Loneliness_DID_Event.gph", ///
+		rows(3) cols(2) imargin(0 0 0 0 0 0) iscale(.6) 
+		graph export "$results/All_figures_and_tables/Event_study_A2.png", replace
+	
+		
+		graph combine "$results/Panic/Panic_DID_Event.gph" "$results/Sadness/Sadness_DID_Event.gph" ///
+		"$results/Sleep/Sleep_DID_Event.gph" "$results/Stress/Stress_DID_Event.gph" ///
+		"$results/Suicide/Suicide_DID_Event.gph" "$results/Wellbeing/Wellbeing_DID_Event.gph" ///
+		"$results/Worry/Worry_DID_Event.gph" , ///
+		rows(4) cols(2) imargin(0 0 0 0 0 0 0) iscale(.6) 
+		graph export "$results/All_figures_and_tables/Event_study_A2cont.png", replace
+
+	
+	** Supplementary Tables
+	
+	/* Table A3: Duration of the Effect of the Stay-At-Home Orders */
+		
+		esttab DID_eventBoredom DID_eventContentment DID_eventDivorce DID_eventImpairment  ///
+		using "$results/All_figures_and_tables/Table2_PanelA.tex", replace label booktabs keep(_IweeXyear_10 ///	
+		_IweeXyear_11 _IweeXyear_12 _IweeXyear_13 _IweeXyear_14  _IweeXyear_15  _IweeXyear_16  _IweeXyear_17) b(2) se(2) r(3) ///
+		coeflabel(_IweeXyear_10 "3 weeks before*2020" _IweeXyear_11 "2 weeks before*2020" _IweeXyear_12 "1 week before*2020" _IweeXyear_13 "Week of lockdown*2020" ///
+		_IweeXyear_14 "1 week after*2020" _IweeXyear_15 "2 weeks after*2020" _IweeXyear_16 "3 weeks after*2020" _IweeXyear_17 "4 weeks after*2020") ///
+		mtitles("Boredom" "Contentment" "Divorce" "Impairment" ) ///
+		stats(countryFE timeFE death N, fmt(. . . 0)  ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations"))  compress ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
+		
+		esttab DID_eventIrritability DID_eventLoneliness DID_eventPanic DID_eventSadness  ///
+		using "$results/All_figures_and_tables/Table2_PanelB.tex", replace label booktabs keep(_IweeXyear_10 ///	
+		_IweeXyear_11 _IweeXyear_12 _IweeXyear_13 _IweeXyear_14  _IweeXyear_15  _IweeXyear_16  _IweeXyear_17) b(2) se(2) r(3) ///
+		coeflabel(_IweeXyear_10 "3 weeks before*2020" _IweeXyear_11 "2 weeks before*2020" _IweeXyear_12 "1 week before*2020" _IweeXyear_13 "Week of lockdown*2020" ///
+		_IweeXyear_14 "1 week after*2020" _IweeXyear_15 "2 weeks after*2020" _IweeXyear_16 "3 weeks after*2020" _IweeXyear_17 "4 weeks after*2020") ///
+		mtitles("Irritability" "Loneliness" "Panic" "Sadness" ) ///
+		stats(countryFE timeFE death N, fmt(. . . 0)  ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations"))  compress ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
+		
+		esttab DID_eventSleep DID_eventStress DID_eventSuicide DID_eventWellbeing DID_eventWorry ///
+		using "$results/All_figures_and_tables/Table2_PanelC.tex", replace label booktabs keep(_IweeXyear_10 ///	
+		_IweeXyear_11 _IweeXyear_12 _IweeXyear_13 _IweeXyear_14  _IweeXyear_15  _IweeXyear_16  _IweeXyear_17) b(2) se(2) r(3) ///
+		coeflabel(_IweeXyear_10 "3 weeks before*2020" _IweeXyear_11 "2 weeks before*2020" _IweeXyear_12 "1 week before*2020" _IweeXyear_13 "Week of lockdown*2020" ///
+		_IweeXyear_14 "1 week after*2020" _IweeXyear_15 "2 weeks after*2020" _IweeXyear_16 "3 weeks after*2020" _IweeXyear_17 "4 weeks after*2020") ///
+		mtitles("Sleep" "Stress" "Suicide" "Wellbeing" "Worry") ///
+		stats(countryFE timeFE death N, fmt(. . . 0)  ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations"))  compress ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
+
+
+	/* Table A4: The Effects of Stay-At-Home Orders - RDD-DiD Estimates */
+	
+	local varlist "Boredom Contentment Impairment Irritability Loneliness Panic Sadness Sleep Stress Suicide Wellbeing Worry Divorce"
+	foreach var of local varlist {
+		
+		use "$data/Google-trends-`var'-Europe/daily_`var'_18_20_all_full.dta", clear
+		drop if dayssincelockdown==0
+		keep if dayssincelockdown!=.
+		
+		gen before_lockdown=1-post_lockdown
+		replace year=year-2019
+		gen post_lockdown_year=post_lockdown*year
+		label var post_lockdown_year "Period after lockdown *Year"
+		gen before_lockdown_year=before_lockdown*year
+				
+		gen post_dayssincelockdown=post_lockdown*dayssincelockdown
+		gen before_dayssincelockdown=before_lockdown*dayssincelockdown
+		gen post_y_dayssincelockdown=post_lockdown_year*dayssincelockdown
+		gen before_y_dayssincelockdown=before_lockdown_year*dayssincelockdown
+			
+		sort country year day
+		gen L_dailyconfirmeddeathsdeaths=dailyconfirmeddeathsdeaths[_n-1] if country==country[_n-1]
+		
+		
+ 		reghdfe d_`var'_18_20 post_lockdown_year post_lockdown post_y_* before_y_* ///
+		post_days* before_days* L_dailyconfirmeddeathsdeaths [pw=pop], absorb(country year week day_w) ///
+		vce(cluster day) 
+		eststo RDD_DID_`var'
+		estadd local countryFE "Yes", replace
+		estadd local timeFE "Yes", replace
+		estadd local death "Yes", replace
+		
+		}		
+	
+			
+		esttab RDD_DID_Boredom RDD_DID_Contentment RDD_DID_Divorce RDD_DID_Impairment  ///
+		using "$results/All_figures_and_tables/Table1_PanelC(1).tex", replace label booktabs  keep(post_lockdown_year) b(2) se(2) r(3) ///
+		coeflabel(post_lockdown_year "T_{i,c}*Year_i") ///
+		mtitles("Boredom" "Contentment" "Divorce" "Impairment" ) ///
+		stats(countryFE timeFE death N, fmt(. . . 0)   ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations"))  compress ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
+				
+		esttab RDD_DID_Irritability RDD_DID_Loneliness RDD_DID_Panic RDD_DID_Sadness   ///
+		using "$results/All_figures_and_tables/Table1_PanelC(2).tex", replace label booktabs keep(post_lockdown_year) b(2) se(2) r(3) ///
+		coeflabel(post_lockdown_year "T_{i,c}*Year_i") ///
+		mtitles("Irritability" "Loneliness" "Panic" "Sadness" ) ///
+		stats(countryFE timeFE death N, fmt(. . . 0) ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations"))  compress ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
+
+		esttab RDD_DID_Sleep RDD_DID_Stress RDD_DID_Suicide RDD_DID_Wellbeing RDD_DID_Worry  ///
+		using "$results/All_figures_and_tables/Table1_PanelC(3).tex", replace label booktabs keep(post_lockdown_year) b(2) se(2) r(3) ///
+		coeflabel(post_lockdown_year "T_{i,c}*Year_i") ///
+		mtitles("Sleep" "Stress" "Suicide" "Wellbeing" "Worry") ///
+		stats(countryFE timeFE death N, fmt(. . . 0)  ///
+		label("Country FE" "Year, Week and Day FE" "Death" "Observations"))  compress ///
+		nonotes star(* 0.1 ** 0.05 *** 0.01) nonumbers
