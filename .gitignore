@@ -1,0 +1,20 @@
+# Ignore everything
+*
+
+# Allow core files
+!.gitignore
+!README.md
+!LICENSE
+
+# Allow folders
+!Data/
+!Dofiles/
+
+# Allow their contents
+!Data/**
+!Dofiles/**
+
+# Ignore data files inside Data
+Data/**/*.csv
+Data/**/*.dta
+Data/**/*.xlsx
