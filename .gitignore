@@ -5,6 +5,7 @@
 !.gitignore
 !README.md
 !LICENSE
+!*.pdf
 
 # Allow folders
 !Data/

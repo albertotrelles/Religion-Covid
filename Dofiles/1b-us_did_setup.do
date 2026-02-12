@@ -39,19 +39,19 @@ foreach dataset of global datasets{
 	by state: gen post_treatment1 = (noyear_edate >= ann_date)
 	gen year_post_treatment1 = dyear*post_treatment1
 
-	*--- T2: City lockdown ---*
+	/**--- T2: City lockdown ---*
 	gen city_date=date(city_enactedfirst, "YMD")
 	format city_date %d
 
 	by state: gen post_treatment2 = (noyear_edate >= city_date)
-	gen year_post_treatment2 = dyear*post_treatment2
+	gen year_post_treatment2 = dyear*post_treatment2*/
 
-	*--- T3: 1 week anticipation ---*
-	gen ant_date=date(date_announced, "YMD") - 7
+	*--- T2: 1 week anticipation ---*
+	gen ant_date=date(date_announced, "YMD") - 7  //anticipation date 
 	format ant_date %d
 
-	by state: gen post_treatment3 = (noyear_edate >= ant_date)
-	gen year_post_treatment3 = dyear*post_treatment3
+	by state: gen post_treatment2 = (noyear_edate >= ant_date)
+	gen year_post_treatment2 = dyear*post_treatment2
 
 	*--- Covid variables ---*
 	foreach var in cases_avg deaths_avg cases deaths{
@@ -74,11 +74,11 @@ foreach dataset of global datasets{
 
 	*--- Relative time ---*
 	gen dayssincetreat1 = noyear_edate - ann_date
-	gen dayssincetreat2 = noyear_edate - city_date
-	gen dayssincetreat3 = noyear_edate - ant_date
+	*gen dayssincetreat2 = noyear_edate - city_date
+	gen dayssincetreat2 = noyear_edate - ant_date
 
 	*--- Event-time dummies ---*
-	forval j=1/3{
+	forval j=1/2{
 	
 		*Leads (pre)
 		cap drop pre*_t`j'
@@ -107,12 +107,13 @@ foreach dataset of global datasets{
 		cap drop ypost*_t`j'
 		
 		gen post0_t`j' = (inrange(dayssincetreat`j', 0, 6))
-		gen post1_t`j' = (inrange(dayssincetreat`j', 7, 13))		
-		gen post2_t`j' = (inrange(dayssincetreat`j', 14, 20))
-		gen post3_t`j' = (inrange(dayssincetreat`j', 21, 27))
-		gen post4_t`j' = (dayssincetreat`j'>=28 & dayssincetreat`j'!=.)
+		gen post1_t`j' = (inrange(dayssincetreat`j', 7, 13))	
+		gen post2_t`j' = (dayssincetreat`j'>=14 & dayssincetreat`j'!=.)
+		*gen post2_t`j' = (inrange(dayssincetreat`j', 14, 20))
+		*gen post3_t`j' = (inrange(dayssincetreat`j', 21, 27))
+		*gen post4_t`j' = (dayssincetreat`j'>=28 & dayssincetreat`j'!=.)
 		
-		forval i = 0/4{
+		forval i = 0/2{
 			gen ypost`i'_t`j' = dyear*post`i'_t`j'
 			label variable ypost`i'_t`j' "$\mathds{1}[2020] \times E_{`i'}$"
 		}
@@ -131,8 +132,7 @@ foreach dataset of global datasets{
 
 
 
-
-
+/*
 
 
 
