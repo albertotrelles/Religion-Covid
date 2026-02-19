@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(du:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git -c:*)",
+      "Bash(git push:*)",
+      "Bash(GIT_TERMINAL_PROMPT=0 git -c credential.helper='\"\"/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager.exe\"\"' push origin main)",
+      "Bash(\"/mnt/c/Program Files/Git/cmd/git.exe\" push origin main)",
+      "Bash(\"/mnt/c/Program Files/Git/cmd/git.exe\" -c http.postBuffer=524288000 push origin main)",
+      "Bash(\"/mnt/c/Program Files/Git/cmd/git.exe\" -c http.postBuffer=1048576000 -c core.compression=0 push origin main)",
+      "Bash(\"/mnt/c/Program Files/Git/cmd/git.exe\" -c http.postBuffer=524288000 -c http.version=HTTP/1.1 push origin main)"
+    ]
+  }
+}
