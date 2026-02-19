@@ -97,7 +97,7 @@ foreach word of global words{
 	
 	forval i = 1/`N'{
 		
-		set seed `i'
+		set rseed `i'
 		preserve
 		bsample, cluster(day)
 		
