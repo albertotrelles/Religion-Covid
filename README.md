@@ -23,8 +23,6 @@ Religion-Covid/
 ├── Figures/                      # Output figures (PNG)
 ├── Tables/                       # Output LaTeX tables (.tex)
 ├── Temporal/                     # Intermediate/temporary files
-├── Litreview/                    # Literature review materials
-└── Overleaf/                     # Overleaf project files
 ```
 
 ## Analysis Pipeline
