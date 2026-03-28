@@ -1,17 +1,13 @@
 global root "C:/Users/ALBERTO TRELLES/Dropbox/Religion-Covid"
-global output "$root/Output"
-global input "$root/Input"
 global data "$root/Data"
 global organized "$data/Organized"
 global raw "$data/Data_collection/raw"
-global demographic "$data/Demographic"
 global temporal "$root/Temporal"
 global tables "$root/Tables"
-global figures "$oot/Figures"
+global figures "$root/Figures"
 cd "$root"
 
 global words "Faith God Meditation Prayer Religion Spirituality"
-global covid L_deaths_avg	//no big changes with different covid covariates 
 
 
 // -------------------------------------------------------------------------- //
@@ -20,8 +16,8 @@ global covid L_deaths_avg	//no big changes with different covid covariates
 
 use "$organized/us_nocat_dynamic.dta", clear
 
-gen treat_date1 = ann_date
-gen treat_date2 = ant_date
+gen treat_date1 = ann_date		//treatment begins at lockdown announcement
+gen treat_date2 = ant_date		//shift treatment by 1 week backwards 
 
 est clear
 foreach word of global words{
@@ -29,7 +25,7 @@ foreach word of global words{
 	
 	forval j = 1/2{
 		reghdfe d_`var' ypre*_t`j' pre*_t`j' [pw=pop] if year_post_treatment`j'==0 & treat_date`j'!=., absorb(post_treatment`j' state_id day year dow) vce(cluster day)
-		mat `word'`j' = r(table)[1,1..12]' , r(table)[5,1..12]', r(table)[6,1..12]'
+		mat `word'`j' = r(table)[1,1..12]' , r(table)[5,1..12]', r(table)[6,1..12]'		//beta, ll, ul 
 	}
 	
 	mat pre_`word' = `word'1 \ `word'2 
@@ -69,7 +65,7 @@ foreach word of global words{
 		legend(order(2 "Announcement" 4 "1-week anticipation") position(6) ring(1) cols(2));
 	#d cr
 	
-	graph export "$root/Figures/pretrends_`word'.png", replace
+	graph export "$figures/pretrends_`word'.png", replace
 	
 }
 
@@ -131,7 +127,7 @@ foreach word of global words {
 
     local var = lower("`word'")
 
-    * Save raw bootstrap draws as .dta
+    *Save raw bootstrap draws as .dta
     clear
     svmat `word', names(col)
     save "$temporal/bootstrap_`var'.dta", replace
@@ -203,7 +199,7 @@ foreach word of global words{
 		legend(order(2 "Announcement" 4 "1-week anticipation") position(6) ring(1) cols(2));
 	#d cr
 
-	graph export "$root/Figures/eventstudy_`word'.png", replace
+	graph export "$figures/eventstudy_`word'.png", replace
 	
 }
 

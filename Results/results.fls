@@ -1,0 +1,409 @@
+PWD c:\Users\ALBERTO TRELLES\Dropbox\Religion-Covid\Results
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT c:\Users\ALBERTO TRELLES\Dropbox\Religion-Covid\Results\results.tex
+OUTPUT results.log
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\ragged2e\ragged2e.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\ragged2e\ragged2e.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\tools\multicol.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\tools\multicol.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\dsfont.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\dsfont.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\comment\comment.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\comment\comment.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\datetime\datetime.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\datetime\datetime.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fmtcount.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fmtcount.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\xkeyval\xkeyval.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\xkeyval\xkeyval.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\xkeyval\xkeyval.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\xkeyval\xkvutils.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fcprefix.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fcprefix.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fcnumparser.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fcnumparser.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\datetime\datetime-defaults.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\datetime\datetime-defaults.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\pgf.revision.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\pgf.revision.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeyslibraryfiltered.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfint.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorerdf.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduledecorations.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\natbib\natbib.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\natbib\natbib.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT .\results.aux
+INPUT .\results.aux
+INPUT results.aux
+OUTPUT results.aux
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fc-english.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fc-english.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\fmtcount\fc-english.def
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT ..\Tables\us_twfe1.tex
+INPUT ..\Tables\us_twfe1.tex
+INPUT ..\Tables\us_twfe1.tex
+INPUT ..\Tables\us_twfe1.tex
+INPUT ..\Tables\us_twfe1.tex
+INPUT ..\Tables\us_bjs1.tex
+INPUT ..\Tables\us_bjs1.tex
+INPUT ..\Tables\us_bjs1.tex
+INPUT ..\Tables\us_bjs1.tex
+INPUT ..\Tables\us_bjs1.tex
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
+INPUT ..\Tables\us_twfe2.tex
+INPUT ..\Tables\us_twfe2.tex
+INPUT ..\Tables\us_twfe2.tex
+INPUT ..\Tables\us_twfe2.tex
+INPUT ..\Tables\us_twfe2.tex
+INPUT ..\Tables\us_bjs2.tex
+INPUT ..\Tables\us_bjs2.tex
+INPUT ..\Tables\us_bjs2.tex
+INPUT ..\Tables\us_bjs2.tex
+INPUT ..\Tables\us_bjs2.tex
+INPUT ..\Tables\us_het1.tex
+INPUT ..\Tables\us_het1.tex
+INPUT ..\Tables\us_het1.tex
+INPUT ..\Tables\us_het1.tex
+INPUT ..\Tables\us_het1.tex
+OUTPUT results.pdf
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT ..\Figures\timeline.png
+INPUT ..\Figures\timeline.png
+INPUT ..\Figures\timeline.png
+INPUT ..\Figures\timeline.png
+INPUT ..\Figures\timeline.png
+INPUT ..\Figures\timeline.png
+INPUT ..\Figures\timeline.png
+INPUT ..\Figures\us_evolution1_Faith.png
+INPUT ..\Figures\us_evolution1_Faith.png
+INPUT ..\Figures\us_evolution1_Faith.png
+INPUT ..\Figures\us_evolution1_Faith.png
+INPUT ..\Figures\us_evolution1_Faith.png
+INPUT ..\Figures\us_evolution1_Faith.png
+INPUT ..\Figures\us_evolution1_Faith.png
+INPUT ..\Figures\us_evolution1_God.png
+INPUT ..\Figures\us_evolution1_God.png
+INPUT ..\Figures\us_evolution1_God.png
+INPUT ..\Figures\us_evolution1_God.png
+INPUT ..\Figures\us_evolution1_God.png
+INPUT ..\Figures\us_evolution1_God.png
+INPUT ..\Figures\us_evolution1_God.png
+INPUT ..\Figures\us_evolution1_Meditation.png
+INPUT ..\Figures\us_evolution1_Meditation.png
+INPUT ..\Figures\us_evolution1_Meditation.png
+INPUT ..\Figures\us_evolution1_Meditation.png
+INPUT ..\Figures\us_evolution1_Meditation.png
+INPUT ..\Figures\us_evolution1_Meditation.png
+INPUT ..\Figures\us_evolution1_Meditation.png
+INPUT ..\Figures\us_evolution1_Prayer.png
+INPUT ..\Figures\us_evolution1_Prayer.png
+INPUT ..\Figures\us_evolution1_Prayer.png
+INPUT ..\Figures\us_evolution1_Prayer.png
+INPUT ..\Figures\us_evolution1_Prayer.png
+INPUT ..\Figures\us_evolution1_Prayer.png
+INPUT ..\Figures\us_evolution1_Prayer.png
+INPUT ..\Figures\us_evolution1_Religion.png
+INPUT ..\Figures\us_evolution1_Religion.png
+INPUT ..\Figures\us_evolution1_Religion.png
+INPUT ..\Figures\us_evolution1_Religion.png
+INPUT ..\Figures\us_evolution1_Religion.png
+INPUT ..\Figures\us_evolution1_Religion.png
+INPUT ..\Figures\us_evolution1_Religion.png
+INPUT ..\Figures\us_evolution1_Spirituality.png
+INPUT ..\Figures\us_evolution1_Spirituality.png
+INPUT ..\Figures\us_evolution1_Spirituality.png
+INPUT ..\Figures\us_evolution1_Spirituality.png
+INPUT ..\Figures\us_evolution1_Spirituality.png
+INPUT ..\Figures\us_evolution1_Spirituality.png
+INPUT ..\Figures\us_evolution1_Spirituality.png
+INPUT ..\Figures\covid_controls.png
+INPUT ..\Figures\covid_controls.png
+INPUT ..\Figures\covid_controls.png
+INPUT ..\Figures\covid_controls.png
+INPUT ..\Figures\covid_controls.png
+INPUT ..\Figures\covid_controls.png
+INPUT ..\Figures\covid_controls.png
+INPUT ..\Figures\pretrends_Faith.png
+INPUT ..\Figures\pretrends_Faith.png
+INPUT ..\Figures\pretrends_Faith.png
+INPUT ..\Figures\pretrends_Faith.png
+INPUT ..\Figures\pretrends_Faith.png
+INPUT ..\Figures\pretrends_Faith.png
+INPUT ..\Figures\pretrends_Faith.png
+INPUT ..\Figures\pretrends_God.png
+INPUT ..\Figures\pretrends_God.png
+INPUT ..\Figures\pretrends_God.png
+INPUT ..\Figures\pretrends_God.png
+INPUT ..\Figures\pretrends_God.png
+INPUT ..\Figures\pretrends_God.png
+INPUT ..\Figures\pretrends_God.png
+INPUT ..\Figures\pretrends_Meditation.png
+INPUT ..\Figures\pretrends_Meditation.png
+INPUT ..\Figures\pretrends_Meditation.png
+INPUT ..\Figures\pretrends_Meditation.png
+INPUT ..\Figures\pretrends_Meditation.png
+INPUT ..\Figures\pretrends_Meditation.png
+INPUT ..\Figures\pretrends_Meditation.png
+INPUT ..\Figures\pretrends_Prayer.png
+INPUT ..\Figures\pretrends_Prayer.png
+INPUT ..\Figures\pretrends_Prayer.png
+INPUT ..\Figures\pretrends_Prayer.png
+INPUT ..\Figures\pretrends_Prayer.png
+INPUT ..\Figures\pretrends_Prayer.png
+INPUT ..\Figures\pretrends_Prayer.png
+INPUT ..\Figures\pretrends_Religion.png
+INPUT ..\Figures\pretrends_Religion.png
+INPUT ..\Figures\pretrends_Religion.png
+INPUT ..\Figures\pretrends_Religion.png
+INPUT ..\Figures\pretrends_Religion.png
+INPUT ..\Figures\pretrends_Religion.png
+INPUT ..\Figures\pretrends_Religion.png
+INPUT ..\Figures\pretrends_Spirituality.png
+INPUT ..\Figures\pretrends_Spirituality.png
+INPUT ..\Figures\pretrends_Spirituality.png
+INPUT ..\Figures\pretrends_Spirituality.png
+INPUT ..\Figures\pretrends_Spirituality.png
+INPUT ..\Figures\pretrends_Spirituality.png
+INPUT ..\Figures\pretrends_Spirituality.png
+INPUT ..\Figures\eventstudy_het_God.png
+INPUT ..\Figures\eventstudy_het_God.png
+INPUT ..\Figures\eventstudy_het_God.png
+INPUT ..\Figures\eventstudy_het_God.png
+INPUT ..\Figures\eventstudy_het_God.png
+INPUT ..\Figures\eventstudy_het_God.png
+INPUT ..\Figures\eventstudy_het_God.png
+INPUT ..\Figures\eventstudy_het_Prayer.png
+INPUT ..\Figures\eventstudy_het_Prayer.png
+INPUT ..\Figures\eventstudy_het_Prayer.png
+INPUT ..\Figures\eventstudy_het_Prayer.png
+INPUT ..\Figures\eventstudy_het_Prayer.png
+INPUT ..\Figures\eventstudy_het_Prayer.png
+INPUT ..\Figures\eventstudy_het_Prayer.png
+INPUT ..\Figures\eventstudy_het_Meditation.png
+INPUT ..\Figures\eventstudy_het_Meditation.png
+INPUT ..\Figures\eventstudy_het_Meditation.png
+INPUT ..\Figures\eventstudy_het_Meditation.png
+INPUT ..\Figures\eventstudy_het_Meditation.png
+INPUT ..\Figures\eventstudy_het_Meditation.png
+INPUT ..\Figures\eventstudy_het_Meditation.png
+INPUT ..\Figures\subcat_coef.png
+INPUT ..\Figures\subcat_coef.png
+INPUT ..\Figures\subcat_coef.png
+INPUT ..\Figures\subcat_coef.png
+INPUT ..\Figures\subcat_coef.png
+INPUT ..\Figures\subcat_coef.png
+INPUT ..\Figures\subcat_coef.png
+INPUT results.aux
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx7.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx7.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\ALBERTO TRELLES\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb

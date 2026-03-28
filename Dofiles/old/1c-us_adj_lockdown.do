@@ -140,6 +140,11 @@ merge m:1 state using `adj_dates', nogen
 *   (2) 0 → 1:    switches on at min adjacent lockdown date
 *   (3) Always 1:  state starts during an adjacent lockdown (does not occur)
 
+*--- adj_date: analog of ann_date for adjacent states ---*
+gen adj_date = min_adj_lockdown
+format adj_date %d
+label var adj_date "Earliest adjacent-state lockdown date (analog of ann_date)"
+
 gen adj_lockdown = (noyear_edate >= min_adj_lockdown) if min_adj_lockdown != .
 replace adj_lockdown = 0 if min_adj_lockdown == .
 
@@ -150,6 +155,28 @@ label var adj_lockdown       "Post adjacent-state lockdown"
 label var year_adj_lockdown  "Year x Post adjacent-state lockdown"
 label var min_adj_lockdown   "Earliest adjacent-state lockdown date"
 
-stop 
+// -------------------------------------------------------------------------- //
+// --- (5) Party classification (2016 presidential election)				  --- //
+// -------------------------------------------------------------------------- //
 
-save "$organized/us_nocat_twfe.dta", replace
+*--- Republican = states won by Trump in the 2016 presidential election ---*
+*--- Democrat  = states won by Clinton in the 2016 presidential election ---*
+*
+* Classification is by statewide popular vote winner, the standard unit
+* for Electoral College purposes. Maine voted Clinton overall (though ME-02
+* went Trump); Nebraska voted Trump overall (though NE-02 went Clinton).
+*
+* Republican (30): AL AK AZ AR FL GA ID IN IA KS KY LA MI MS MO MT NE
+*                  NC ND OH OK PA SC SD TN TX UT WV WI WY
+* Democrat   (20): CA CO CT DE HI IL ME MD MA MN NV NH NJ NM NY OR RI VT VA WA
+
+gen republican = 0
+foreach st in AL AK AZ AR FL GA ID IN IA KS KY LA MI MS MO MT NE NC ND OH OK PA SC SD TN TX UT WV WI WY {
+	replace republican = 1 if state == "`st'"
+}
+
+label var republican "=1 if state voted Republican (Trump) in 2016 presidential election"
+
+*stop
+
+save "$organized/us_nocat_twfe_adj.dta", replace

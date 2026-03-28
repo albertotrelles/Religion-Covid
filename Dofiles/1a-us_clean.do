@@ -1,6 +1,4 @@
 global root "C:/Users/ALBERTO TRELLES/Dropbox/Religion-Covid"
-global output "$root/Output"
-global input "$root/Input"
 global data "$root/Data"
 global organized "$data/Organized"
 global raw "$data/Data_collection/raw"
@@ -378,53 +376,6 @@ save "$organized/us_subcat.dta", replace
 
 
 
-/*
-
-**# Bookmark #3
-// -------------------------------------------------------------------------- //
-// --- (3) DiD Panel													  --- //
-// -------------------------------------------------------------------------- //
-use "$organized/us_nocat.dta", clear
-sort state year edate
-by state year: gen day=_n
-
-gen ann_date=date(date_announced, "YMD")
-format ann_date %d
-
-*Post_treatment (=1 for 2019 paired days)
-gen noyear_edate = edate
-replace noyear_edate = edate + 365 if year==2019 
-replace noyear_edate = noyear_edate+1 if year==2019 & noyear_edate>=21974	//handle bissextile year 
-format noyear_edate %d
-by state: gen post_treatment = (noyear_edate >= ann_date)
-*drop noyear_edate
-
-*Year dummy
-gen dyear=(year==2020)
-
-*Year x post_treatment 
-gen year_post_treatment = dyear*post_treatment
-
-*Lagged covid variables
-foreach var in cases_avg deaths_avg cases deaths{
-	gen L_`var' = `var'[_n-1] if state==state[_n-1]
-	replace L_`var' = 0 if L_`var' & state!=state[_n-1]
-}
-
-*Week of year 
-replace week_id=week_id-15 if year==2020
-
-*Relative time 
-gen dayssincetreat = noyear_edate - ann_date	//NA for NT. Duplicated values for paired 2019 days 
-
-
-drop if _merge==2
-save "$organized/us_nocat_twfe.dta", replace
-
-
-	
-*any set of covid19 controls is good for results (prayer at least)
-	
 	
 	
 	
